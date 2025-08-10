@@ -62,35 +62,35 @@ export default function LoginPage() {
               <input
                 type="text"
                 className="form-control w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm h-12"
-                placeholder=" " // Espacio para que el label flote
+                placeholder="Username " // Espacio para que el label flote
                 id="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
               />
-              <label
+              {/* <label
                 htmlFor="username"
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm transition-all duration-200 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-3 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-blue-600"
               >
                 Usuario
-              </label>
+              </label> */}
             </div>
             <div className="form-floating mb-4 relative">
               <input
                 type="password"
                 className="form-control w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm h-12"
-                placeholder=" " // Espacio para que el label flote
+                placeholder="Contraseña " // Espacio para que el label flote
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <label
+              {/* <label
                 htmlFor="password"
                 className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm transition-all duration-200 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:top-3 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-blue-600"
               >
                 Contraseña
-              </label>
+              </label> */}
             </div>
             {/* Checkbox "Remember Me" - opcional, no tiene lógica en el backend actual */}
             <div className="form-check mb-4 flex items-center">

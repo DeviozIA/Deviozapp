@@ -1,0 +1,13 @@
+version: "3"
+services:
+  frontend:
+    build: ./login-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./login-backend
+    ports:
+      - "8080:8080"
