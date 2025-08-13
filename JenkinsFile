@@ -12,7 +12,7 @@ pipeline {
     stage('Checkout') {
       steps {
         // usa tu credencial SSH si clonas por SSH; o usa HTTPS si prefieres
-        git branch: 'Dev_2', credentialsId: 'github-ssh-key	', url: 'git@github.com:DeviozIA/Deviozapp.git'
+        git branch: 'Dev_2', credentialsId: 'github-https', url: 'https://github.com/DeviozIA/Deviozapp.git'
       }
     }
 
