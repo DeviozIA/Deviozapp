@@ -18,18 +18,18 @@ pipeline {
 
     stage('Build images') {
       steps {
-        sh "docker build -t ${FRONTEND_IMAGE}:${TAG} ./login-frontend"
-        sh "docker build -t ${BACKEND_IMAGE}:${TAG} ./login-backend"
+        bat "docker build -t ${FRONTEND_IMAGE}:${TAG} ./login-frontend"
+        bat "docker build -t ${BACKEND_IMAGE}:${TAG} ./login-backend"
       }
     }
 
     stage('Login & Push to Docker Hub') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-          sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
-          sh "docker push ${FRONTEND_IMAGE}:${TAG}"
-          sh "docker push ${BACKEND_IMAGE}:${TAG}"
-          sh 'docker logout'
+          bat 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+          bat "docker push ${FRONTEND_IMAGE}:${TAG}"
+          bat "docker push ${BACKEND_IMAGE}:${TAG}"
+          bat 'docker logout'
         }
       }
     }
