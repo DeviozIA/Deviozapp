@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  labels:
+    app: backend
+spec:
+  replicas: 2   # cuántos pods quieres del backend
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: tuusuario/login-backend:latest
+        ports:
+        - containerPort: 5000
+
+# replicas: 2 → levanta 2 pods.
+# image: → usa tu imagen de Docker Hub (la que ya subiste con tu pipeline CI).
+# containerPort: 3000 → puerto interno del contenedor (ajusta al de tu app).
